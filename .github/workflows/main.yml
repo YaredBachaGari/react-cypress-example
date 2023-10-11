@@ -1,17 +1,17 @@
 name: cypress todo test
 on: [push]
 jobs:
-  job1:
+  run-my-test:
    runs-on: ubuntu-latest
    steps:
      - name: Checkout
-       uses: actions/checkout@v2
+       uses: actions/checkout@v3
      - name: Cypress run
        uses: cypress-io/github-action@v3
        with:
         browser: chrome
         headless: true
-        build: npm run build
         start: npm run start
-        wait-on: "http://localhost:3000"
-
+        wait-on: "http://localhost:3000/login"
+     - name: Set output
+       run: echo "{cypressOutput}={nothing}" >> $GITHUB_OUTPUT
