@@ -1,0 +1,17 @@
+name: cypress todo test
+on: [push]
+jobs:
+  job1:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v2
+     - name: Cypress run
+       uses: cypress-io/github-action@v3
+       with:
+        browser: chrome
+        headless: true
+        build: npm run build
+        start: npm run start
+        wait-on: "http://localhost:3000"
+
