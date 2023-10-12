@@ -5,9 +5,11 @@ const Button = ({ label, color, onClick }) => {
     console.log("hello");
   };
   return (
-    <button style={{ color: { color }, padding: 5 }} onClick={onClick}>
-      {label}
-    </button>
+    <div>
+      <button style={{ color: { color }, padding: 5 }} onClick={onClick}>
+        {label}
+      </button>
+    </div>
   );
 };
 
