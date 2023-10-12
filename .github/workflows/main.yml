@@ -13,5 +13,9 @@ jobs:
         headless: true
         start: npm run start
         wait-on: "http://localhost:3000/login"
+     - name: Run Cypress and record on dashboard
+       env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+       run: npx cypress run --record --key $CYPRESS_RECORD_KEY
      - name: Set output
        run: echo "{cypressOutput}={nothing}" >> $GITHUB_OUTPUT
