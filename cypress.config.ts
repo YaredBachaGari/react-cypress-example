@@ -2,6 +2,7 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
+    projectId: "t4nguo",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
@@ -13,4 +14,6 @@ export default defineConfig({
       bundler: "webpack",
     },
   },
+  "video": true,
+  "videosFolder": "cypress/videos",
 });
