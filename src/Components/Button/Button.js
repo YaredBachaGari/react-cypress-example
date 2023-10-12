@@ -6,6 +6,7 @@ const Button = ({ label, color, onClick }) => {
   };
   return (
     <div>
+    <p>this is button</p>
       <button style={{ color: { color }, padding: 5 }} onClick={onClick}>
         {label}
       </button>
